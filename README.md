@@ -4,6 +4,12 @@ A simple 8-bit processor implemented in Minecraft redstone.
 Map:
 ![Overview](./figures/computer.png)
 
+## Installation
+1. Download the `computer.zip` archive.
+1. Extract and copy the resulting folder into `~/.minecraft/saves/`.
+1. Start the game and load into the "Computer" world.
+1. Set render distance to 18 chunks or more.
+
 ## Specifications
 * Accumulator architecture.
 * 16-bit instructions.

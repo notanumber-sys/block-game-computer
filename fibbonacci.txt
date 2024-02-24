@@ -1,0 +1,34 @@
+# The following program computes and displays the first 14 values of the fibbonacci sequence
+
+# --- setup ---
+#                           prepare loop counter
+0   0001_0001   0000_0110   MOVE 6
+2   0001_0000   0010_0000   STORE *32
+
+#                           prepare starting values
+4   0001_0001   0000_0000   MOVE 0
+6   0001_0000   0000_0000   STORE *0
+8   0001_0001   0000_0001   MOVE 1
+10  0001_0000   0000_0001   STORE *1
+12  0001_0000   1000_0001   STORE *129  (display 1)
+
+# --- start of loop ---
+#                           read previous value
+14  0001_0010   0000_0001   READ *1
+#                           compute next value
+16  1010_0000   0000_0000   ADDF *0
+18  0001_0000   0000_0000   STORE *0
+20  0001_0000   1000_0000   STORE *128  (display 0)
+#                           compute next value
+22  1010_0000   0000_0001   ADDF *1
+24  0001_0000   0000_0001   STORE *1
+26  0001_0000   1000_0001   STORE *129  (display 1)
+#                           read current loop counter
+28  0001_0010   0010_0000   READ *32
+#                           subtract one
+30  1000_0001   0000_0001   SUB 1
+#                           continue if not zero
+32  0000_1010   1000_1110   JMPIF 14
+34  0001_0001   1111_1111   MOVE 255
+36  0001_0000   1000_0010   STORE *130
+38  0000_0001   0000_0000   HALT

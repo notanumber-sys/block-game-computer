@@ -2,6 +2,7 @@
 A simple 8-bit processor implemented in Minecraft redstone.
 
 Map:
+
 ![Overview](./figures/computer.png)
 
 ## Installation
@@ -22,7 +23,9 @@ Map:
 **Programming.** The computer is programmed by pulling levers directly in the ROM banks to set the correct memory configuration. The program counter starts at memory address `0100 0000` (lower left corner in the "ROM" area in the map), so this is where the program should start. Each instruction spans two bytes, but even starting addresses is not enforced. The ROM may store both program and any constant data that the program might need. An easy way to have several programs stored in the computer simultaneously is to let the first instruction be a jump instruction which you may then change depending on which program you want to run.
 
 **Execution.** When the ROM has been configured with a program, the computer is ready to execute it. The execution is controlled and monitored from the user interface labeled "CONTROL" in the map. The layout of the interface is displayed in the figure below:
+
 ![Interface](./figures/interface.drawio.png)
+
 * **display byte 0-2**: The three write-only bytes are displayed here.
 * **accumulator register**: The current value of the accumulator register is displayed here.
 * **program counter register**: The current value of the program counter register is displayed here.
@@ -101,6 +104,7 @@ The ACC- and PC-registers are viewable from control interface.
 The PC-register has its own adder circuit which means that the next address can be computed while the ALU is used for computation.
 
 The following figure shows an overview of the architecture of the computer:
+
 ![Architecture](figures/architecture.drawio.png)
 
 ## 
